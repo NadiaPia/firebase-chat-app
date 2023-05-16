@@ -5,12 +5,13 @@ import Cookies from "universal-cookie"; //very easy library to get/set/remove co
 
 const cookies = new Cookies()
 
-export const Auth = () => {
+export const Auth = (props) => {
 
     const signInWithGoogle = async () => {
         try {
         const result = await signInWithPopup(auth, provider);
-        cookies.set("auth-token", result.user.refreshToken)
+        cookies.set("auth-token", result.user.refreshToken);
+        props.setIsAuth(true) //in order to open the chat authomatically (not after refresh the page)
     } catch(err) {
         console.error(err)
     }
