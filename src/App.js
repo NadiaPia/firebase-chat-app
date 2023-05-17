@@ -1,5 +1,9 @@
 import React, { useState, useRef } from "react"; //useRef hook that grab data from input
 import './App.css';
+import './styles/Chat.css';
+import './styles/Auth.css';
+
+
 import { Auth } from "./components/Auth";
 import Cookies from "universal-cookie";
 import { Chat } from "./components/Chat";
